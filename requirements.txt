@@ -1,0 +1,18 @@
+# Core
+fastapi==0.115.0
+uvicorn==0.30.6
+
+# Data & Utils
+pandas==2.2.2
+numpy==1.26.4
+
+# NLP (basic preprocessing)
+nltk==3.9.1
+scikit-learn==1.5.2
+
+# Optional (for embeddings / semantic scoring)
+sentence-transformers==3.0.1
+
+# Testing
+pytest==8.3.2
+
