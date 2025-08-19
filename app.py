@@ -1,8 +1,22 @@
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from resume_match.matcher import ResumeMatcher
 from interview_ai.answer_eval import AnswerEvaluator
+import os
 
 app = FastAPI()
+
+# Path to the favicon.ico file
+favicon_path = os.path.join(os.path.dirname(__file__), "static", "favicon.ico")
+
+# Mount the "static" directory
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    return FileResponse(favicon_path)
+
 matcher = ResumeMatcher()
 evaluator = AnswerEvaluator()
 
