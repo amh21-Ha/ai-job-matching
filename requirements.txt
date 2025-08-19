@@ -3,7 +3,7 @@ fastapi==0.115.0
 uvicorn==0.30.6
 
 # Data & Utils
-pandas==2.2.2
+pandas==2.2.3
 numpy==1.26.4
 
 # NLP (basic preprocessing)
